@@ -7,11 +7,13 @@ import { Grid, Buttons, Spaces } from '../../styles';
 const Home = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
-      <Button
-        title="Go to Details"
+      <ScaleTouchable
         onPress={() => navigation.navigate('Settings', { name: 'test props' })}
-      />
+      >
+        <View style={styles.button}>
+          <Text>Settings with props</Text>
+        </View>
+      </ScaleTouchable>
       <ScaleTouchable onPress={() => navigation.toggleDrawer()}>
         <View style={styles.button}>
           <Text>Open drawer</Text>
@@ -24,10 +26,9 @@ const Home = ({ navigation }: any) => {
 const styles = StyleSheet.create({
   container: {
     ...Grid.defaltContainer,
-    backgroundColor: 'green',
   },
   button: {
-    backgroundColor: 'red',
+    backgroundColor: 'orange',
     ...Spaces.btnMargin,
     ...Buttons.smallRounded,
   },

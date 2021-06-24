@@ -7,6 +7,13 @@ const SignIn = ({ navigation }: any) => {
   console.log(navigation);
   return (
     <View style={styles.container}>
+      <View>
+        <Text>Login</Text>
+      </View>
+      <View>
+        <Text>Password</Text>
+      </View>
+
       <Button
         title="Go to Home sub screen"
         onPress={() => {
@@ -23,7 +30,6 @@ const SignIn = ({ navigation }: any) => {
 const styles = StyleSheet.create({
   container: {
     ...Grid.defaltContainer,
-    backgroundColor: 'orange',
   },
 });
 

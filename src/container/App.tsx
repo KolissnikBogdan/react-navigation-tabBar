@@ -15,7 +15,7 @@ const App = () => {
   }, []);
 
   return isLoading ? (
-    <Splash />
+    <Splash loading={isLoading} />
   ) : (
     <>
       <StatusBar />

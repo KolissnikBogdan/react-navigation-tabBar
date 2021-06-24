@@ -3,7 +3,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from '../../screens/tabs/Home';
-import SettingsScreen from '../../screens/tabs/Settings';
+import Settings from '../../screens/tabs/Settings';
 
 const HomeStackScreen = () => {
   const HomeStack = createStackNavigator();
@@ -11,7 +11,7 @@ const HomeStackScreen = () => {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={Home} />
-      <HomeStack.Screen name="Settings" component={SettingsScreen} />
+      <HomeStack.Screen name="Settings" component={Settings} />
     </HomeStack.Navigator>
   );
 };

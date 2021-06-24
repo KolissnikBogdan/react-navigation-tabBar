@@ -4,12 +4,14 @@ import { Animated, TouchableWithoutFeedback } from 'react-native';
 interface IScale {
   onPress?(): void;
   outputRange?: number;
+  styles?: any;
 }
 
 const ScaleTouchable: React.FunctionComponent<IScale> = ({
   onPress,
   children,
   outputRange = 0.5,
+  styles,
 }) => {
   const animationValue = useRef(new Animated.Value(0)).current;
 
@@ -42,6 +44,7 @@ const ScaleTouchable: React.FunctionComponent<IScale> = ({
 
   return (
     <TouchableWithoutFeedback
+      style={styles}
       onPress={onPress}
       onPressIn={pressInAnimation}
       onPressOut={pressOutAnimation}

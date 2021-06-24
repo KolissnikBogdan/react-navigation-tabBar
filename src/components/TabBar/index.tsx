@@ -4,10 +4,13 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import TabShape from './Shape';
 import Profile from '../../components/icons/Profile';
 import Home from '../../components/icons/Home';
+import ScaleTouchable from '../../components/Scale';
 
 import { IRoute } from 'models/navigation';
 
 import { TABS_HEIGHT, width } from '../../utils/constants';
+
+import { Grid } from '../../styles';
 
 const TabBar = ({ state, descriptors, navigation }: any) => {
   const { routes } = state;
@@ -73,12 +76,12 @@ const TabBar = ({ state, descriptors, navigation }: any) => {
           }
 
           return (
-            <TouchableOpacity key={index} onPress={onPress}>
+            <ScaleTouchable key={index} onPress={onPress}>
               <View style={[styles.tabContent, { width: tabWidth }]}>
                 {getIcon(tab.name)}
                 {getText(tab.name)}
               </View>
-            </TouchableOpacity>
+            </ScaleTouchable>
           );
         })}
       </View>
@@ -102,8 +105,7 @@ const styles = StyleSheet.create({
   },
   button: {
     top: -22.5,
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...Grid.flex,
     width: 50,
     height: 50,
     borderRadius: 27,
@@ -113,8 +115,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   tabContent: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...Grid.flex,
     flexDirection: 'column',
     height: TABS_HEIGHT,
   },
